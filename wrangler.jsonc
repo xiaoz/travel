@@ -1,18 +1,18 @@
 {
 	"name": "travel",
-	"compatibility_date": "2025-10-27",
-	"assets": {
+	"compatibility_date": "2026-01-29",
+	"assets":{
 	    "directory": "./public",
 		"html_handling": "auto-trailing-slash",
 		"not_found_handling": "404-page",
 		"run_worker_first": false
 	},
-	"build": {
+	"build":{
 		"command":"hugo build --gc --minify"
 	},
-	"workers_dev": true,
-	"preview_urls": true,
-	"observability": {
+	"workers_dev":true,
+	"preview_urls":true,
+	"observability":{
 		"enabled": false,
 		"head_sampling_rate": 1,
 		"logs": {
@@ -20,7 +20,6 @@
 			"head_sampling_rate": 1,
 			"persist": true,
 			"invocation_logs": true
-		
-		    }
+		}
 	  }
 }
