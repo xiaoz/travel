@@ -1,0 +1,77 @@
+baseurl = "https://180.184.33.52"
+defaultContentLanguage = "zh"
+languageCode = "zh-Hans"
+title = "我的旅行日记"
+theme = "dream"
+
+# [services]
+# [services.disqus]
+# shortname = ""
+# [services.googleAnalytics]
+# ID = ""
+
+[params]
+ #zenMode = true
+
+lightTheme = "emerald"
+darkTheme = "forest"
+
+# backgroundImage = "img/global-background.jpg"
+# backgroundImageDark = ""
+
+author = "author"
+description = "我的旅行记录～"
+avatar = "img/author.png"
+headerTitle = "xiaoniu's Blog"
+motto = "与其感慨路难行，不如马上出发。"
+ footerBottomText = "dwwc"
+
+# rss = true
+
+# utterancesRepo = ""
+
+# valine = true
+# LEANCLOUD_APP_ID = ""
+# LEANCLOUD_APP_KEY = ""
+
+# waline = true
+# walineServer = ""
+
+email = "qnwlpay@foxmail.com"
+
+siteStartYear = 2025
+
+ favicon = "favicon.ico"
+
+# Syntax highlighting
+# customSyntaxHighlighting = true
+
+# options
+# stickyNav = true
+ reorderNavItems = ["about", "search", "rss", "posts", "categories", "tags"]
+ collapseNavItems = ["posts", "categories", "tags"]
+# noDefaultSummaryCover = true
+# showTableOfContents = true
+# showSummaryCoverInPost = true
+# imageZoomableInPost = true
+ showPrevNextPost = true
+ reorderShares = ["x", "whatsapp"]
+
+[params.navItems]
+
+series = { href = "/series", icon = "planet", title = "Series" }
+#github = { href = "https://github.com/g1eny0ung", target = "_blank", icon = "logo-github", title = "GitHub" }
+
+# [params.twikoo]
+# enabled = true
+# envID = ""
+# region = ""
+# lang = ""
+
+ [params.advanced]
+ customCSS = ["css/custom.css"]
+# customJS = []
+
+# [params.experimental]
+# jsDate = true
+# jsDateFormat = "yyyy年MM月dd日"
