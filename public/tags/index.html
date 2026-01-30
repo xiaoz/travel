@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans"
+<html lang="en"
   x-data
   :class="$store.darkMode.isDark() ? 'dark' : 'light'"
   :data-theme="$store.darkMode.theme()">
@@ -9,20 +9,16 @@
     <title>
 
 
-所有标签 | 我的旅行日记</title>
+All Tags | Hǎo Life In China～</title>
 
     
-  
-    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
-  
-
 
 <link rel="canonical" href="http://180.184.33.52:39707/tags/" />
 
 
 
-<meta name="author" content="author" />
-<meta name="description" content="我的旅行记录～" />
+<meta name="author" content="Hǎo Life In China" />
+<meta name="description" content="Expat &amp; foreigner life guide in China.～" />
 
 
 
@@ -30,10 +26,10 @@
 
 
 <meta property="og:url" content="http://180.184.33.52:39707/tags/">
-  <meta property="og:site_name" content="我的旅行日记">
+  <meta property="og:site_name" content="Hǎo Life In China～">
   <meta property="og:title" content="Tags">
-  <meta property="og:description" content="我的旅行记录～">
-  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:description" content="Expat &amp; foreigner life guide in China.～">
+  <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 
 
@@ -41,7 +37,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tags">
-  <meta name="twitter:description" content="我的旅行记录～">
+  <meta name="twitter:description" content="Expat &amp; foreigner life guide in China.～">
 
 
 
@@ -53,6 +49,8 @@
 
      
 
+    
+    <link rel="stylesheet" href="/css/custom.css" />
     
 
     <script>
@@ -84,9 +82,9 @@
   <div class="container flex justify-between px-4">
   
     <section class="flex items-center gap-4">
-      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="翻转一下！">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="Flip it!">
         <div class="h-10 rounded-full">
-          <img src="/img/author.png" alt="xiaoniu&#39;s Blog" />
+          <img src="/img/author.jpg" alt="Hǎo Life In China～" />
         </div>
       </div>
 
@@ -94,19 +92,17 @@
       <div>
         
         <a href="http://180.184.33.52:39707/" class="text-lg font-semibold cursor-pointer">
-          xiaoniu&#39;s Blog
+          Hǎo Life In China～
         </a>
         
         
-        <div class="text-base-content/60 text-sm">与其感慨路难行，不如马上出发。</div>
+        <div class="text-base-content/60 text-sm">Your friendly guide to living, traveling, and thriving in China.</div>
         
       </div>
       
     </section>
 
     
-    
-      
     
 
     <div class="dropdown dropdown-end sm:hidden">
@@ -123,8 +119,8 @@
 
 
 <li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
-    <ion-icon name="information-circle"></ion-icon>关于</div>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="About">
+    <ion-icon name="information-circle"></ion-icon>About</div>
 </li>
 
 
@@ -148,9 +144,9 @@
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
     <ion-icon name="archive"></ion-icon>
-    归档
+    Archives
   </a>
 </li>
 
@@ -158,9 +154,9 @@
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="All Categories">
     <ion-icon name="grid"></ion-icon>
-    所有分类
+    All Categories
   </a>
 </li>
 
@@ -168,43 +164,13 @@
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
     <ion-icon name="pricetags"></ion-icon>
-    所有标签
+    All Tags
   </a>
 </li>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/series" target="" title="Series">
-    
-    <ion-icon name="planet"></ion-icon>
-    
-    Series
-  </a>
-</li>
-
-
-
-  
 
 
 
@@ -216,13 +182,11 @@
 
       
       
-      
-      
 
 
 
 
-<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="About">About</div>
 
 
 
@@ -243,77 +207,30 @@
 
 
       
-
-      <div class="dropdown dropdown-end dropdown-hover">
-        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
-          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
-        </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
-</li>
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="All Categories">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
-    <ion-icon name="pricetags"></ion-icon>
-    所有标签
-  </a>
-</li>
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
 
 
-          
+      
 
-          
-          
+      
 
-
-
-
-
-
-
-
-
-  
-    
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/series" target="" title="Series">
-    
-    <ion-icon name="planet"></ion-icon>
-    
-    Series
-  </a>
-</li>
-
-
-
-  
-
-
-          
-        </ul>
-      </div>
       
     </section>
   </div>
@@ -330,44 +247,16 @@
 <div class="flex flex-col md:flex-row mt-4">
 
   <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
-    <h1 class="text-2xl">所有标签</h1>
-    <p class="text-sm">9标签</p>
+    <h1 class="text-2xl">All Tags</h1>
+    <p class="text-sm">2 tags</p>
     <div class="flex flex-wrap gap-4 mt-6">
       
-      <a href="/tags/tag3/" class="badge h-6 no-underline hover:badge-primary">
-        Tag3
+      <a href="/tags/tag1/" class="badge h-6 no-underline hover:badge-primary">
+        Tag1
       </a>
       
-      <a href="/tags/%E7%A6%8F%E5%BB%BA%E5%AE%9D%E8%97%8F%E5%9C%B0/" class="badge h-6 no-underline hover:badge-primary">
-        福建宝藏地
-      </a>
-      
-      <a href="/tags/%E7%A6%8F%E5%BB%BA%E6%97%85%E8%A1%8C/" class="badge h-6 no-underline hover:badge-primary">
-        福建旅行
-      </a>
-      
-      <a href="/tags/%E7%BA%A2%E8%89%B2%E6%97%85%E6%B8%B8/" class="badge h-6 no-underline hover:badge-primary">
-        红色旅游
-      </a>
-      
-      <a href="/tags/%E5%AE%A2%E5%AE%B6%E6%96%87%E5%8C%96/" class="badge h-6 no-underline hover:badge-primary">
-        客家文化
-      </a>
-      
-      <a href="/tags/%E9%BE%99%E5%B2%A912345%E6%96%87%E6%97%85%E6%A0%BC%E5%B1%80/" class="badge h-6 no-underline hover:badge-primary">
-        龙岩12345文旅格局
-      </a>
-      
-      <a href="/tags/%E9%BE%99%E5%B2%A9%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" class="badge h-6 no-underline hover:badge-primary">
-        龙岩旅游攻略
-      </a>
-      
-      <a href="/tags/%E9%BE%99%E5%B2%A9%E4%BA%94%E5%A4%A7%E6%96%87%E6%97%85%E5%93%81%E7%89%8C/" class="badge h-6 no-underline hover:badge-primary">
-        龙岩五大文旅品牌
-      </a>
-      
-      <a href="/tags/%E7%94%9F%E6%80%81%E6%97%85%E6%B8%B8/" class="badge h-6 no-underline hover:badge-primary">
-        生态旅游
+      <a href="/tags/tag2/" class="badge h-6 no-underline hover:badge-primary">
+        Tag2
       </a>
       
     </div>
@@ -382,25 +271,32 @@
     <div class="dream-grid">
       
         <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-          <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/article-title23/">
+          <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2026-01-30-milk-tea-guide/">
   
   <figure>
     
-    <img src="/img/cover.jpg" alt="Article Title23" />
+    <img src="https://lifetravel.oss-cn-hongkong.aliyuncs.com/travel/2026/01/30-f306698287a8.jpg" alt="外国人在中国点奶茶攻略Milk Tea Guide" />
     
   </figure>
   
 
   <div class="card-body">
-    <h2 class="card-title">Article Title23</h2>
+    <h2 class="card-title">外国人在中国点奶茶攻略Milk Tea Guide</h2>
 
     <p class="date text-base-content/60">
     
-      星期一, 1月 26, 2026
+      <span data-format="luxon">2026-01-30T22:33:40&#43;08:00</span>
     
     </p>
 
-    <p>Cut out summary from your post content here.</p>
+    <p>How to order milk tea in China ？外国人在中国怎么点奶茶呢？
+💙For expat / For foreigners.
+📷可以直接照着图片点，亲测很好喝。
+You can copy these orders directly—I’ve tried them all and they’re safe choices.
+💙
+也欢迎交流讨论，以上为个人口味。
+如果你有更好喝的配方，不要吝啬，分享出来吧～我会亲自去尝尝的。
+Feel free to share and discuss. These are just my personal preferences, so if you have a better combo, don’t be shy—share it with me! I’ll go and try it myself.</p>
 
     
     <div class="card-actions justify-between items-center mt-4">
@@ -413,7 +309,7 @@
   <span itemprop="author" itemscope itemtype="https://schema.org/Person">
   
     
-      <span itemprop="name">Author Name</span>
+      <span itemprop="name">Hǎo Life In China</span>
     
   
   </span>
@@ -423,58 +319,7 @@
 
       <div class="flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>1分钟阅读</span>
-      </div>
-    </div>
-  </div>
-</a>
-
-        </div>
-      
-        <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-          <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/article-title/">
-  
-  <figure>
-    
-    <img src="https://coze-coding-project.tos.coze.site/coze_storage_7595052346368065577/image/generate_image_2d05df01-8752-4b5c-895a-3a4162ded0a7.jpeg?sign=1772033290-faf8a09c72-0-857496e740a394d352433bc60277246d9af2ff5d93618bd302fdc4bb688860f4" alt="🔥龙岩文旅放大招！4978亿只是起点，“十五五”五大品牌带你玩转福建宝藏地！" />
-    
-  </figure>
-  
-
-  <div class="card-body">
-    <h2 class="card-title">🔥龙岩文旅放大招！4978亿只是起点，“十五五”五大品牌带你玩转福建宝藏地！</h2>
-
-    <p class="date text-base-content/60">
-    
-      星期一, 1月 26, 2026
-    
-    </p>
-
-    <p>姐妹们！今天要给你们安利一个正在崛起的宝藏旅行地——福建龙岩！🔥</p>
-<p>最近龙岩在新闻发布会上宣布了一个重磅消息：“十四五”期间文旅产业规模已经达到4978亿元！而“十五五”期间将形成“12345”文旅发展格局，持续打造五大文旅品牌！这个数字和规划真的太震撼了！💥</p>
-
-    
-    <div class="card-actions justify-between items-center mt-4">
-      
-        <div class="flex items-center">
-  
-  <span>@</span>
-  
-
-  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-  
-    
-      <span itemprop="name">Author Name</span>
-    
-  
-  </span>
-</div>
-
-      
-
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>1分钟阅读</span>
+        <span>1 minute read</span>
       </div>
     </div>
   </div>
@@ -496,13 +341,11 @@
 
   <div>
   
-  <p>
-    © 2025 - 2026 我的旅行日记
-  </p>
+  <p>© 2026 Hǎo Life In China～</p>
   
 
   
-  <p>dwwc</p>
+  <p>Your Happy Guide to Life in China，外籍朋友的在华生活指南，记录中国日常。</p>
   
 </div>
 
@@ -549,12 +392,23 @@
       class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
     >
       <div class="card-body">
-        <div class="card-title">About Me</div>
+        <div class="card-title">About Us</div>
 
         <div class="prose dark:prose-invert">
-          <p>Hi, my name is Yue Yang.</p>
-<p>This is my blog.
-sfsdfsdfsd</p>
+          <p>────── 🐼 Hǎo Life In China ──────</p>
+<p>We’re a community-driven platform helping expats, travelers, and curious minds live better in China. From street food secrets to subway hacks, we make life here easier, richer, and full of hǎo moments.</p>
+<p>Explore<br>
+• Living in China<br>
+• Travel Guides<br>
+• Food &amp; Culture<br>
+• Language Tips<br>
+• City Spotlights (Beijing, Shanghai, Chengdu, Xi’an, Shenzhen&hellip;)</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Legal<br>
+© 2025 Hǎo Life In China. All rights reserved.<br>
+Privacy Policy | Terms of Use | Cookie Statement</p>
+<p>Made with love — and baozi — in China.</p>
 
         </div>
       </div>
@@ -569,41 +423,11 @@ sfsdfsdfsd</p>
       class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
     >
       <div class="card-body">
-        <div class="card-title">社交链接</div>
+        <div class="card-title">Social Links</div>
 
         <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
   
-  <li>
-    <a href="mailto:qnwlpay@foxmail.com" title="Email">
-      <ion-icon name="mail"></ion-icon>
-    </a>
-  </li>
-  
 
-  
-  <li>
-    <a href="https://github.com/g1eny0ung" target="_blank" title="GitHub">
-      <ion-icon name="logo-github"></ion-icon>
-    </a>
-  </li>
-  
-  <li>
-    <a href="https://x.com/g1eny0ung" target="_blank" title="X">
-      <ion-icon name="logo-x"></ion-icon>
-    </a>
-  </li>
-  
-  <li>
-    <a href="https://www.linkedin.com/in/g1eny0ung" target="_blank" title="Linkedin">
-      <ion-icon name="logo-linkedin"></ion-icon>
-    </a>
-  </li>
-  
-  <li>
-    <a href="https://stackoverflow.com/users/5676489/g1eny0ung" target="_blank" title="stack overflow">
-      <ion-icon name="logo-stackoverflow"></ion-icon>
-    </a>
-  </li>
   
 </ul>
 
@@ -622,13 +446,11 @@ sfsdfsdfsd</p>
 
   <div>
   
-  <p>
-    © 2025 - 2026 我的旅行日记
-  </p>
+  <p>© 2026 Hǎo Life In China～</p>
   
 
   
-  <p>dwwc</p>
+  <p>Your Happy Guide to Life in China，外籍朋友的在华生活指南，记录中国日常。</p>
   
 </div>
 
@@ -682,6 +504,24 @@ sfsdfsdfsd</p>
     
 
 
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "en" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
 
 
 
@@ -690,6 +530,28 @@ sfsdfsdfsd</p>
     
 
     
+
+    
+    
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GGEM4MNTQ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6GGEM4MNTQ');
+        }
+      </script>
+    
+  
+
 
     
 

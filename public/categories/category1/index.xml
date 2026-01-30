@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Category1 on 我的旅行日记</title>
+    <title>Category1 on Hǎo Life In China～</title>
     <link>http://180.184.33.52:39707/categories/category1/</link>
-    <description>Recent content in Category1 on 我的旅行日记</description>
+    <description>Recent content in Category1 on Hǎo Life In China～</description>
     <generator>Hugo</generator>
-    <language>zh-Hans</language>
-    <lastBuildDate>Mon, 26 Jan 2026 15:13:19 +0800</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Jan 2026 14:58:38 +0800</lastBuildDate>
     <atom:link href="http://180.184.33.52:39707/categories/category1/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🔥龙岩文旅放大招！4978亿只是起点，“十五五”五大品牌带你玩转福建宝藏地！</title>
-      <link>http://180.184.33.52:39707/posts/article-title/</link>
-      <pubDate>Mon, 26 Jan 2026 15:13:19 +0800</pubDate>
-      <guid>http://180.184.33.52:39707/posts/article-title/</guid>
-      <description>&lt;p&gt;姐妹们！今天要给你们安利一个正在崛起的宝藏旅行地——福建龙岩！🔥&lt;/p&gt;&#xA;&lt;p&gt;最近龙岩在新闻发布会上宣布了一个重磅消息：“十四五”期间文旅产业规模已经达到4978亿元！而“十五五”期间将形成“12345”文旅发展格局，持续打造五大文旅品牌！这个数字和规划真的太震撼了！💥&lt;/p&gt;</description>
+      <title>Test</title>
+      <link>http://180.184.33.52:39707/posts/en/sdfsdf/</link>
+      <pubDate>Fri, 30 Jan 2026 14:58:38 +0800</pubDate>
+      <guid>http://180.184.33.52:39707/posts/en/sdfsdf/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>http://180.184.33.52:39707/posts/en/test/</link>
+      <pubDate>Fri, 30 Jan 2026 14:58:38 +0800</pubDate>
+      <guid>http://180.184.33.52:39707/posts/en/test/</guid>
+      <description>&lt;blockquote&gt;&lt;p&gt;[!NOTE]&#xA;The default alert title is changed to &amp;ldquo;Hello&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
