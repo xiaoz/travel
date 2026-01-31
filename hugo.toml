@@ -4,9 +4,9 @@ defaultContentLanguage = "en"
 title = "Hǎo Life In China～"
 theme = "dream"
 
-# [services]
-# [services.disqus]
-# shortname = ""
+ [services]
+ [services.disqus]
+ shortname = "chinalifetravel"
  [services.googleAnalytics]
  ID = "G-6GGEM4MNTQ"
  
@@ -27,10 +27,6 @@ motto = "Your friendly guide to living, traveling, and thriving in China."
  footerBottomText = "Your Happy Guide to Life in China，外籍朋友的在华生活指南，记录中国日常。"
 
 # rss = true
-
-[markup]
-[markup.goldmark.parser.attribute]
- block = true
 
 # utterancesRepo = ""
 
@@ -56,8 +52,9 @@ siteStartYear = 2025
  collapseNavItems = ["posts", "categories", "tags"]
 # noDefaultSummaryCover = true
 # showTableOfContents = true
-# showSummaryCoverInPost = true
-# imageZoomableInPost = true
+
+ showSummaryCoverInPost = false
+ imageZoomableInPost = true
  showPrevNextPost = true
  reorderShares = ["x", "whatsapp"]
 

@@ -1,0 +1,147 @@
+<!-- layouts/shortcodes/carousel.html -->
+{{- $height := .Get "height" | default "400px" | string -}}
+{{- $autoplay := (.Get "autoplay" | default "false" | string | lower) | eq "true" -}}
+{{- $interval := .Get "interval" | default "5000" | int -}}
+
+{{- $srcList := slice -}}
+{{- $titleList := slice -}}
+{{- $descList := slice -}}
+
+{{- $srcs := .Get "srcs" | default "" | string -}}
+{{- $titles := .Get "titles" | default "" | string -}}
+{{- $descriptions := .Get "descriptions" | default "" | string -}}
+
+{{- if and $srcs (ne $srcs "") }}
+  {{- range $src := (split $srcs "#") }}
+    {{- $clean := $src -}}
+    {{- if and $clean (ne $clean "") }}
+      {{- $srcList = $srcList | append $clean -}}
+    {{- end }}
+  {{- end }}
+  {{- if and $titles (ne $titles "") }}
+    {{- range $title := (split $titles ",") }}
+      {{- $clean := $title  -}}
+      {{- if and $clean (ne $clean "") }}
+        {{- $titleList = $titleList | append $clean -}}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- if and $descriptions (ne $descriptions "") }}
+    {{- range $desc := (split $descriptions ",") }}
+      {{- $clean := $desc -}}
+      {{- if and $clean (ne $clean "") }}
+        {{- $descList = $descList | append $clean -}}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- else }}
+  {{- range .Page.Resources.ByType "image" }}
+    {{- $srcList = $srcList | append .RelPermalink -}}
+    {{- $titleList = $titleList | append .Name -}}
+    {{- $descList = $descList | append .Params.description -}}
+  {{- end }}
+{{- end }}
+
+{{- if not $srcList }}
+  {{- errorf "❌ carousel shortcode: no images found. Use srcs=\"img1.jpg,img2.png\" or place images in the same page bundle." }}
+{{- end }}
+<div class="hugo-carousel"
+     data-autoplay="{{ $autoplay }}"
+     data-interval="{{ $interval }}"
+     style="position:relative;width:100%;height:{{ $height }};overflow:hidden;">
+  <div class="carousel-slides" style="display:flex;width:{{ 100 }}%;height:100%;transition:transform .4s;will-change:transform;">
+    {{- range $i, $src := $srcList }}
+      {{- $title := index $titleList $i | default "" -}}
+      {{- $desc := index $descList $i | default "" -}}
+      <div class="carousel-slide" style="flex:0 0 100%;height:100%;position:relative;">
+          {{- $img := page.Resources.GetMatch (printf "*%s*" (path.Base $src)) -}}
+          {{- if $img }}
+            {{- $resized := $img.Resize "1200x quality=85" -}}
+            <img
+              src="{{ $resized.RelPermalink }}"
+           
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="{{ $title }}456"
+              loading="lazy"
+              decoding="async"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            >
+          {{- else }}
+            <img src="{{ $src }}" alt="{{ $title }}123" style="width:100%;height:100%;object-fit:cover;display:block;">
+          {{- end }}
+        <!-- <img src="{{ $src }}" alt="{{ $title }}" title="{{ $desc }}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+        {{- if or $title $desc }}
+          <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:8px 12px;font-size:.9em;">{{- if $title }}<strong>{{ $title }}</strong>{{- end }}{{- if and $title $desc }}&mdash;{{- end }}{{- if $desc }}{{ $desc }}{{- end }}</div>
+        {{- end }} -->
+      </div>
+    {{- end }}
+  </div>
+  <button type="button" class="carousel-prev" aria-label="Prev" style="position:absolute;top:50%;left:10px;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;z-index:10;">&larr;</button>
+  <button type="button" class="carousel-next" aria-label="Next" style="position:absolute;top:50%;right:10px;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;z-index:10;">&rarr;</button>
+  <div class="carousel-indicators" style="position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;">
+    {{- range $i, $src := $srcList }}
+      <button type="button" aria-label="Go to {{ add $i 1 }}" data-slide-to="{{ $i }}" style="width:12px;height:12px;border-radius:50%;background:{{ if eq $i 0 }}white{{ else }}rgba(255,255,255,.5){{ end }};border:none;cursor:pointer;"{{ if eq $i 0 }} class="active"{{ end }}></button>
+    {{- end }}
+  </div>
+</div>
+<script>
+
+// assets/js/carousel.js
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.hugo-carousel').forEach(container => {
+      const slides = container.querySelector('.carousel-slides');
+      if (!slides) return;
+  
+      const slideCount = container.querySelectorAll('.carousel-slide').length;
+      let currentIndex = 0;
+      let autoPlayTimer = null;
+  
+      // 初始化：显示第一张
+      const goToSlide = (index) => {
+        if (index < 0) index = slideCount - 1;
+        if (index >= slideCount) index = 0;
+        currentIndex = index;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  
+        // 更新指示器
+        container.querySelectorAll('.carousel-indicators button').forEach((btn, i) => {
+          btn.classList.toggle('active', i === currentIndex);
+          btn.style.background = i === currentIndex ? 'white' : 'rgba(255,255,255,0.5)';
+        });
+      };
+  
+      const nextSlide = () => goToSlide(currentIndex + 1);
+      const prevSlide = () => goToSlide(currentIndex - 1);
+  
+      // 按钮事件
+      container.querySelector('.carousel-next')?.addEventListener('click', nextSlide);
+      container.querySelector('.carousel-prev')?.addEventListener('click', prevSlide);
+  
+      // 指示器事件
+      container.querySelectorAll('.carousel-indicators button').forEach((btn, i) => {
+        btn.addEventListener('click', () => goToSlide(i));
+      });
+  
+      // 自动播放（如果 data-autoplay="true"）
+      const autoplay = container.dataset.autoplay === 'true';
+      const interval = parseInt(container.dataset.interval) || 5000;
+      if (autoplay) {
+        autoPlayTimer = setInterval(nextSlide, interval);
+        container.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+        container.addEventListener('mouseleave', () => {
+          autoPlayTimer = setInterval(nextSlide, interval);
+        });
+      }
+  
+      // 键盘导航
+      container.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+  
+      // 启动
+      goToSlide(0);
+    });
+  });
+
+</script>
